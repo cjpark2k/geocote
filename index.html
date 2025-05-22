@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEOCOTE™: Leading the Trend in Eco-Friendly Metal Protection (Single Page PDF Version)</title>
+    <title>GEOCOTE™: Leading the Trend in Eco-Friendly Metal Protection (Enhanced PDF Page-Break Version)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -162,13 +162,23 @@
             vertical-align: middle;
         }
 
-        /* Styles for PDF printing */
+        /* Styles for PDF page breaks */
+        .pdf-page-container {
+            /* This container helps manage content for each "page" */
+        }
+
         @media print {
             body {
                 -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
                 color-adjust: exact !important; /* Firefox, Edge */
             }
-            /* page-break-inside: avoid ensures these elements try not to split across pages */
+            .pdf-page-break {
+                page-break-after: always !important;
+                /* Add some padding to the bottom of a page before break for better spacing */
+                /* padding-bottom: 20px; /* This might be unnecessary with page-break-after */
+                height: 0; /* Ensure the break div itself takes no space */
+                display: block; /* Ensure it's treated as a block for page break */
+            }
             header, footer, section, .card, .chart-container, .mechanism-container, .custom-table {
                 page-break-inside: avoid !important;
             }
@@ -180,7 +190,7 @@
             .bg-brand-primary, .bg-brand-accent, .bg-gray-100, .bg-red-100, .bg-green-100, .bg-gray-50, .bg-white, .mechanism-core, .mechanism-item {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
-                background-color: inherit; 
+                background-color: inherit; /* Or specify the color again if needed */
             }
             .card {
                 box-shadow: none !important; /* Remove shadow in print for cleaner look */
@@ -190,7 +200,7 @@
             .text-white, .text-green-500, .text-red-700, .text-red-600, .text-green-700, .text-green-600, .brand-primary, .brand-secondary, .brand-accent, .text-dark, .text-gray-600, .text-gray-500, .text-gray-700 {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
-                color: inherit; 
+                color: inherit; /* Or specify the color again */
             }
             /* Specific color overrides if 'inherit' is not enough */
             .bg-brand-primary { background-color: #0052CC !important; }
@@ -210,255 +220,272 @@
             - '배경 그래픽(Background graphics)' 또는 '배경 인쇄' 옵션이 선택되어 있는지 확인해야 색상과 배경 이미지가 올바르게 나옵니다.
             - '용지 크기(Paper size)'는 일반적으로 A4로 설정됩니다.
             - '배율(Scale)'은 '기본값(Default)' 또는 '맞춤(Fit to page/printable area)'으로 설정해 보세요. 콘텐츠가 페이지에 넘칠 경우 배율을 약간 줄여(예: 90-95%) 조정할 수 있습니다.
-        4. 이 문서는 콘텐츠가 끊김 없이 이어지는 단일 페이지로 구성되어 있습니다.
+        4. 이 문서는 각 주요 섹션이 새 페이지에서 시작되도록 구성되었습니다.
     -->
 
-    <header class="bg-brand-primary text-white py-12 px-4 md:py-16">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">The Future of Metal Protection is Here</h1>
-            <p class="text-lg md:text-xl mb-8">Water-Based Zinc Flake Coatings: Leading in Performance & Sustainability</p>
-            <div class="text-2xl md:text-3xl font-bold brand-accent bg-white inline-block p-3 md:p-4 rounded-lg shadow-xl text-green-500">
-                GEOCOTE™: Up to <span class="text-3xl md:text-4xl">60%</span> VOC Reduction!
-            </div>
-        </div>
-    </header>
-
-    <main class="container mx-auto p-4 md:p-8">
-        <section class="my-8 md:my-12">
-            <h2 class="section-title">Evolving Trends in the Metal Coatings Market</h2>
-            <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Traditional metal protection methods face increasing scrutiny due to environmental impact and performance limitations. The industry is rapidly shifting towards advanced solutions like zinc flake coatings, with a strong emphasis on eco-friendly alternatives.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="card">
-                    <h3 class="sub-title">Traditional Methods</h3>
-                    <p class="text-sm md:text-base">Galvanizing and conventional plating often involve hazardous materials and high energy consumption.</p>
-                </div>
-                <div class="card">
-                    <h3 class="sub-title">Technological Shift</h3>
-                    <p class="text-sm md:text-base">Zinc flake coatings offer superior corrosion resistance with thinner films and no risk of hydrogen embrittlement.</p>
-                </div>
-                <div class="card">
-                    <h3 class="sub-title">Market Demand</h3>
-                    <p class="text-sm md:text-base">There is a growing demand for coatings that are both high-performing and environmentally responsible.</p>
+    <div class="pdf-page-container"> <header class="bg-brand-primary text-white py-12 px-4 md:py-16">
+            <div class="container mx-auto text-center">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">The Future of Metal Protection is Here</h1>
+                <p class="text-lg md:text-xl mb-8">Water-Based Zinc Flake Coatings: Leading in Performance & Sustainability</p>
+                <div class="text-2xl md:text-3xl font-bold brand-accent bg-white inline-block p-3 md:p-4 rounded-lg shadow-xl text-green-500">
+                    GEOCOTE™: Up to <span class="text-3xl md:text-4xl">60%</span> VOC Reduction!
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section class="my-8 md:my-12">
-            <h2 class="section-title">The Environmental Imperative: Why Water-Based?</h2>
-            <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Solvent-based coatings are a major source of Volatile Organic Compound (VOC) emissions, posing risks to health and the environment. Stricter regulations worldwide are accelerating the adoption of water-based alternatives.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="card">
-                    <h3 class="sub-title mb-4">VOC Content: A Stark Contrast</h3>
-                    <div class="chart-container h-[350px] md:h-[400px]">
-                        <canvas id="vocChart"></canvas>
+        <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                <h2 class="section-title">Evolving Trends in the Metal Coatings Market</h2>
+                <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Traditional metal protection methods face increasing scrutiny due to environmental impact and performance limitations. The industry is rapidly shifting towards advanced solutions like zinc flake coatings, with a strong emphasis on eco-friendly alternatives.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="card">
+                        <h3 class="sub-title">Traditional Methods</h3>
+                        <p class="text-sm md:text-base">Galvanizing and conventional plating often involve hazardous materials and high energy consumption.</p>
                     </div>
-                    <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ water-based solutions dramatically reduce harmful VOCs compared to traditional solvent-based coatings and are on par with leading water-based competitors.</p>
-                </div>
-                <div class="card">
-                    <h3 class="sub-title mb-4">Safety First</h3>
-                    <div class="flex flex-col items-center space-y-4">
-                        <div class="text-center p-4 rounded-lg bg-red-100 border border-red-400 w-full">
-                            <span class="text-4xl md:text-5xl">🔥</span>
-                            <p class="font-semibold text-red-700 mt-2 text-sm md:text-base">Solvent-Based: Flammable</p>
-                            <p class="text-xs md:text-sm text-red-600">Poses fire hazards and requires special handling.</p>
-                        </div>
-                        <div class="text-center p-4 rounded-lg bg-green-100 border border-green-400 w-full">
-                             <span class="text-4xl md:text-5xl">💧</span>
-                            <p class="font-semibold text-green-700 mt-2 text-sm md:text-base">GEOCOTE™ (Water-Based): Non-Flammable</p>
-                            <p class="text-xs md:text-sm text-green-600">Enhances workplace safety and simplifies storage.</p>
-                        </div>
+                    <div class="card">
+                        <h3 class="sub-title">Technological Shift</h3>
+                        <p class="text-sm md:text-base">Zinc flake coatings offer superior corrosion resistance with thinner films and no risk of hydrogen embrittlement.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="sub-title">Market Demand</h3>
+                        <p class="text-sm md:text-base">There is a growing demand for coatings that are both high-performing and environmentally responsible.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
 
-        <section class="my-8 md:my-12 py-12 bg-gray-100 rounded-lg">
-            <div class="text-center">
-                <img src="https://placehold.co/150x50/0052CC/FFFFFF?text=L'BESTE+GAT" alt="L'BESTE GAT Logo Placeholder" class="mx-auto mb-4 h-10 md:h-12" onerror="this.src='https://placehold.co/150x50/cccccc/333333?text=Logo+Error'; this.alt='Error Loading Logo';">
-                <h2 class="section-title">Introducing GEOCOTE™</h2>
-                <p class="text-lg md:text-xl brand-secondary font-semibold mb-4">The Superior Water-Based Zinc Flake Solution by L'BESTE GAT</p>
-                <p class="text-base md:text-lg max-w-3xl mx-auto mb-6">GEOCOTE™ leverages proprietary silane oligomer binder technology to deliver exceptional performance while championing environmental responsibility. It's not just a coating; it's a commitment to a sustainable future.</p>
-                 <div class="card max-w-4xl mx-auto">
-                    <h3 class="sub-title">GEOCOTE™ Anti-Corrosion Mechanism</h3>
-                    <p class="mb-4 text-gray-700 text-center text-sm md:text-base">GEOCOTE™ provides multi-faceted protection for metal surfaces, ensuring excellent corrosion resistance even in harsh environments.</p>
-                    <div class="mechanism-container">
-                        <div class="mechanism-core"><span>Corrosion Resistance</span></div>
-                        <div id="sacrificed" class="mechanism-item">
-                            <div class="icon">🛡️</div>
-                            <h4>Sacrificial Protection</h4>
-                            <p>Zinc (Zn) oxidizes before iron, protecting the base material.</p>
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                <h2 class="section-title">The Environmental Imperative: Why Water-Based?</h2>
+                <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Solvent-based coatings are a major source of Volatile Organic Compound (VOC) emissions, posing risks to health and the environment. Stricter regulations worldwide are accelerating the adoption of water-based alternatives.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="card">
+                        <h3 class="sub-title mb-4">VOC Content: A Stark Contrast</h3>
+                        <div class="chart-container h-[350px] md:h-[400px]">
+                            <canvas id="vocChart"></canvas>
                         </div>
-                        <div id="passivation" class="mechanism-item">
-                            <div class="icon">🧱</div>
-                            <h4>Passivation</h4>
-                            <p>Forms a stable oxide protective layer on the surface, inhibiting corrosion.</p>
-                        </div>
-                        <div id="barrier" class="mechanism-item">
-                            <div class="icon">🌊</div>
-                            <h4>Barrier Effect</h4>
-                            <p>Layered zinc flakes physically block the penetration of corrosive agents.</p>
-                        </div>
-                        <div id="selfhealing" class="mechanism-item">
-                            <div class="icon">✨</div>
-                            <h4>Self-Healing Effect</h4>
-                            <p>Zinc ions leach out from damaged areas to self-repair defects.</p>
+                        <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ water-based solutions dramatically reduce harmful VOCs compared to traditional solvent-based coatings and are on par with leading water-based competitors.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="sub-title mb-4">Safety First</h3>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div class="text-center p-4 rounded-lg bg-red-100 border border-red-400 w-full">
+                                <span class="text-4xl md:text-5xl">🔥</span>
+                                <p class="font-semibold text-red-700 mt-2 text-sm md:text-base">Solvent-Based: Flammable</p>
+                                <p class="text-xs md:text-sm text-red-600">Poses fire hazards and requires special handling.</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg bg-green-100 border border-green-400 w-full">
+                                 <span class="text-4xl md:text-5xl">💧</span>
+                                <p class="font-semibold text-green-700 mt-2 text-sm md:text-base">GEOCOTE™ (Water-Based): Non-Flammable</p>
+                                <p class="text-xs md:text-sm text-green-600">Enhances workplace safety and simplifies storage.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <section class="my-8 md:my-12">
-            <h2 class="section-title">Performance Comparison: GEOCOTE™ vs. Competitors</h2>
-            <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Data-driven comparisons highlight GEOCOTE™'s advantages in key performance areas.</p>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="card">
-                    <h3 class="sub-title mb-4">Unmatched Corrosion Resistance (NSST)</h3>
-                    <div class="chart-container h-[380px] md:h-[420px]">
-                        <canvas id="corrosionChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ S-570 provides over 1500 hours of protection at just 8-10µm DFT, surpassing competitors. This is possible due to its excellent substrate adhesion and no-flaking properties. GEOCOTE™ X-250 also offers comparable or better protection than solvent-based coatings with a thinner film.</p>
-                </div>
-
-                <div class="card">
-                    <h3 class="sub-title mb-4">Energy Efficiency: Lower Curing Temperatures</h3>
-                    <div class="chart-container h-[380px] md:h-[420px]">
-                        <canvas id="curingTempChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ X-250 cures at 270°C, significantly lower than competing water-based systems (e.g., NOF at 340°C), leading to substantial energy savings. Solvent-based systems cure at lower temperatures but have high VOC content.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="my-8 md:my-12">
-             <h2 class="section-title sr-only">Performance Comparison (Continued)</h2> 
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div class="card text-center">
-                    <div class="card-content-fill">
-                        <h3 class="sub-title">Energy Saving Impact</h3>
-                        <p class="text-base md:text-lg mb-2">Using GEOCOTE™ X-250 (270°C cure):</p>
-                        <p class="stat-number">27%</p>
-                        <p class="text-lg md:text-xl font-semibold mb-4">Energy Reduction</p>
-                        <p class="text-base md:text-lg mb-2">Annual CO2 Emission Reduction (Brake Disc Example):</p>
-                        <p class="stat-number">35.7 Tons</p>
-                        <p class="text-lg md:text-xl font-semibold">Equivalent to Planting 140,000 Pine Trees</p>
-                    </div>
-                    <p class="mt-4 text-xs md:text-sm text-gray-600"></p>
-                </div>
-                <div class="card">
-                     <div class="card-content-fill">
-                        <h3 class="sub-title">Appearance, Workability & Stability Comparison</h3>
-                        <div class="overflow-x-auto">
-                            <table class="w-full divide-y divide-gray-200 custom-table">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="text-left uppercase tracking-wider text-gray-500">Feature</th>
-                                        <th class="text-left uppercase tracking-wider text-gray-500">Solvent-Based (Magni)</th>
-                                        <th class="text-left uppercase tracking-wider text-gray-500">GEOCOTE™ (Water-Based)</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="font-medium">Appearance Color</td>
-                                        <td><span class="color-swatch" style="background-color: #A9A9A9;"></span>Dark Silver</td>
-                                        <td class="brand-accent font-semibold"><span class="color-swatch" style="background-color: #D3D3D3;"></span>Bright Silver (Aesthetic)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-medium">Substrate Adhesion Method</td>
-                                        <td>Organic Binder Mediated (Relatively Weaker)</td>
-                                        <td class="brand-accent font-semibold">Water-Based, Direct Substrate Bonding (Superior)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-medium">Flaking during Fastener Assembly</td>
-                                        <td>Potential for Minor Flaking<br>(Little Flaking)</td>
-                                        <td class="brand-accent font-semibold">No Flaking</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-medium">Odor</td>
-                                        <td>Strong</td>
-                                        <td class="brand-accent font-semibold">Almost None</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-medium">Stability (vs. Humidity)</td>
-                                        <td>Vulnerable (Easy Gelation)</td>
-                                        <td class="brand-accent font-semibold">Excellent</td>
-                                    </tr>
-                                     <tr>
-                                        <td class="font-medium">Storage Stability</td>
-                                        <td>Oxidation over time</td>
-                                        <td class="brand-accent font-semibold">High (95% after 6 weeks)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-medium">Viscosity Control</td>
-                                        <td>Using Thinner</td>
-                                        <td class="brand-accent font-semibold">Using Fresh Water</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12 py-12 bg-gray-100 rounded-lg">
+                <div class="text-center">
+                    <img src="https://placehold.co/150x50/0052CC/FFFFFF?text=L'BESTE+GAT" alt="L'BESTE GAT Logo Placeholder" class="mx-auto mb-4 h-10 md:h-12" onerror="this.src='https://placehold.co/150x50/cccccc/333333?text=Logo+Error'; this.alt='Error Loading Logo';">
+                    <h2 class="section-title">Introducing GEOCOTE™</h2>
+                    <p class="text-lg md:text-xl brand-secondary font-semibold mb-4">The Superior Water-Based Zinc Flake Solution by L'BESTE GAT</p>
+                    <p class="text-base md:text-lg max-w-3xl mx-auto mb-6">GEOCOTE™ leverages proprietary silane oligomer binder technology to deliver exceptional performance while championing environmental responsibility. It's not just a coating; it's a commitment to a sustainable future.</p>
+                     <div class="card max-w-4xl mx-auto">
+                        <h3 class="sub-title">GEOCOTE™ Anti-Corrosion Mechanism</h3>
+                        <p class="mb-4 text-gray-700 text-center text-sm md:text-base">GEOCOTE™ provides multi-faceted protection for metal surfaces, ensuring excellent corrosion resistance even in harsh environments.</p>
+                        <div class="mechanism-container">
+                            <div class="mechanism-core"><span>Corrosion Resistance</span></div>
+                            <div id="sacrificed" class="mechanism-item">
+                                <div class="icon">🛡️</div>
+                                <h4>Sacrificial Protection</h4>
+                                <p>Zinc (Zn) oxidizes before iron, protecting the base material.</p>
+                            </div>
+                            <div id="passivation" class="mechanism-item">
+                                <div class="icon">🧱</div>
+                                <h4>Passivation</h4>
+                                <p>Forms a stable oxide protective layer on the surface, inhibiting corrosion.</p>
+                            </div>
+                            <div id="barrier" class="mechanism-item">
+                                <div class="icon">🌊</div>
+                                <h4>Barrier Effect</h4>
+                                <p>Layered zinc flakes physically block the penetration of corrosive agents.</p>
+                            </div>
+                            <div id="selfhealing" class="mechanism-item">
+                                <div class="icon">✨</div>
+                                <h4>Self-Healing Effect</h4>
+                                <p>Zinc ions leach out from damaged areas to self-repair defects.</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ offers superior appearance, excellent adhesion, and workability, leading to enhanced durability and quality.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
+    
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                <h2 class="section-title">Performance Comparison: GEOCOTE™ vs. Competitors</h2>
+                <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">Data-driven comparisons highlight GEOCOTE™'s advantages in key performance areas.</p>
 
-        <section class="my-8 md:my-12">
-            <h2 class="section-title">GEOCOTE™: Three Core Advantages</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="card">
-                    <div class="text-4xl md:text-5xl brand-accent mb-4">🌍</div>
-                    <h3 class="sub-title">Eco-Friendly</h3>
-                    <p class="text-sm md:text-base">Low VOCs, non-flammable, reduced CO2 footprint. Contributes to safer workplaces and a healthier planet.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="card">
+                        <h3 class="sub-title mb-4">Unmatched Corrosion Resistance (NSST)</h3>
+                        <div class="chart-container h-[380px] md:h-[420px]">
+                            <canvas id="corrosionChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ S-570 provides over 1500 hours of protection at just 8-10µm DFT, surpassing competitors. This is possible due to its excellent substrate adhesion and no-flaking properties. GEOCOTE™ X-250 also offers comparable or better protection than solvent-based coatings with a thinner film.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="sub-title mb-4">Energy Efficiency: Lower Curing Temperatures</h3>
+                        <div class="chart-container h-[380px] md:h-[420px]">
+                            <canvas id="curingTempChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ X-250 cures at 270°C, significantly lower than competing water-based systems (e.g., NOF at 340°C), leading to substantial energy savings. Solvent-based systems cure at lower temperatures but have high VOC content.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="text-4xl md:text-5xl brand-accent mb-4">🛡️</div>
-                    <h3 class="sub-title">High Performance</h3>
-                    <p class="text-sm md:text-base">Superior corrosion resistance, excellent adhesion, and durability even with thinner films.</p>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
+
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                 <h2 class="section-title sr-only">Performance Comparison (Continued)</h2> 
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="card text-center">
+                        <div class="card-content-fill">
+                            <h3 class="sub-title">Energy Saving Impact</h3>
+                            <p class="text-base md:text-lg mb-2">Using GEOCOTE™ X-250 (270°C cure):</p>
+                            <p class="stat-number">27%</p>
+                            <p class="text-lg md:text-xl font-semibold mb-4">Energy Reduction</p>
+                            <p class="text-base md:text-lg mb-2">Annual CO2 Emission Reduction (Brake Disc Example):</p>
+                            <p class="stat-number">35.7 Tons</p>
+                            <p class="text-lg md:text-xl font-semibold">Equivalent to Planting 140,000 Pine Trees</p>
+                        </div>
+                        <p class="mt-4 text-xs md:text-sm text-gray-600"></p>
+                    </div>
+                    <div class="card">
+                         <div class="card-content-fill">
+                            <h3 class="sub-title">Appearance, Workability & Stability Comparison</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full divide-y divide-gray-200 custom-table">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="text-left uppercase tracking-wider text-gray-500">Feature</th>
+                                            <th class="text-left uppercase tracking-wider text-gray-500">Solvent-Based (Magni)</th>
+                                            <th class="text-left uppercase tracking-wider text-gray-500">GEOCOTE™ (Water-Based)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="font-medium">Appearance Color</td>
+                                            <td><span class="color-swatch" style="background-color: #A9A9A9;"></span>Dark Silver</td>
+                                            <td class="brand-accent font-semibold"><span class="color-swatch" style="background-color: #D3D3D3;"></span>Bright Silver (Aesthetic)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Substrate Adhesion Method</td>
+                                            <td>Organic Binder Mediated (Relatively Weaker)</td>
+                                            <td class="brand-accent font-semibold">Water-Based, Direct Substrate Bonding (Superior)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Flaking during Fastener Assembly</td>
+                                            <td>Potential for Minor Flaking<br>(Little Flaking)</td>
+                                            <td class="brand-accent font-semibold">No Flaking</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Odor</td>
+                                            <td>Strong</td>
+                                            <td class="brand-accent font-semibold">Almost None</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Stability (vs. Humidity)</td>
+                                            <td>Vulnerable (Easy Gelation)</td>
+                                            <td class="brand-accent font-semibold">Excellent</td>
+                                        </tr>
+                                         <tr>
+                                            <td class="font-medium">Storage Stability</td>
+                                            <td>Oxidation over time</td>
+                                            <td class="brand-accent font-semibold">High (95% after 6 weeks)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Viscosity Control</td>
+                                            <td>Using Thinner</td>
+                                            <td class="brand-accent font-semibold">Using Fresh Water</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs md:text-sm text-gray-600">GEOCOTE™ offers superior appearance, excellent adhesion, and workability, leading to enhanced durability and quality.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="text-4xl md:text-5xl brand-accent mb-4">💰</div>
-                    <h3 class="sub-title">Cost-Effective</h3>
-                    <p class="text-sm md:text-base">Energy savings from lower curing temperatures, reduced waste, and enhanced productivity lead to lower Total Cost of Ownership (TCO).</p>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
+
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                <h2 class="section-title">GEOCOTE™: Three Core Advantages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="card">
+                        <div class="text-4xl md:text-5xl brand-accent mb-4">🌍</div>
+                        <h3 class="sub-title">Eco-Friendly</h3>
+                        <p class="text-sm md:text-base">Low VOCs, non-flammable, reduced CO2 footprint. Contributes to safer workplaces and a healthier planet.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-4xl md:text-5xl brand-accent mb-4">🛡️</div>
+                        <h3 class="sub-title">High Performance</h3>
+                        <p class="text-sm md:text-base">Superior corrosion resistance, excellent adhesion, and durability even with thinner films.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-4xl md:text-5xl brand-accent mb-4">💰</div>
+                        <h3 class="sub-title">Cost-Effective</h3>
+                        <p class="text-sm md:text-base">Energy savings from lower curing temperatures, reduced waste, and enhanced productivity lead to lower Total Cost of Ownership (TCO).</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="my-8 md:my-12 py-12 bg-gray-100 rounded-lg">
-            <h2 class="section-title">Applications Across Various Industries</h2>
-            <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">GEOCOTE™'s advanced formulation is suitable for a wide range of applications, meeting diverse industry demands for high-quality metal protection.</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 text-center">
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚗</span> <p class="mt-2 font-semibold text-xs md:text-sm">Automotive</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚢</span> <p class="mt-2 font-semibold text-xs md:text-sm">Marine</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🔩</span> <p class="mt-2 font-semibold text-xs md:text-sm">Fasteners</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🏗️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Construction</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">⚡</span> <p class="mt-2 font-semibold text-xs md:text-sm">Energy Sector</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🛡️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Military</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">⚙️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Equipment</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚜</span> <p class="mt-2 font-semibold text-xs md:text-sm">Agricultural M.</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🛑</span> <p class="mt-2 font-semibold text-xs md:text-sm">Brake Discs</p></div>
-                <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🔗</span> <p class="mt-2 font-semibold text-xs md:text-sm">Brackets</p></div>
-            </div>
-        </section>
+            <section class="my-8 md:my-12 py-12 bg-gray-100 rounded-lg">
+                <h2 class="section-title">Applications Across Various Industries</h2>
+                <p class="text-base md:text-lg text-center mb-8 max-w-3xl mx-auto">GEOCOTE™'s advanced formulation is suitable for a wide range of applications, meeting diverse industry demands for high-quality metal protection.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 text-center">
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚗</span> <p class="mt-2 font-semibold text-xs md:text-sm">Automotive</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚢</span> <p class="mt-2 font-semibold text-xs md:text-sm">Marine</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🔩</span> <p class="mt-2 font-semibold text-xs md:text-sm">Fasteners</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🏗️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Construction</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">⚡</span> <p class="mt-2 font-semibold text-xs md:text-sm">Energy Sector</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🛡️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Military</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">⚙️</span> <p class="mt-2 font-semibold text-xs md:text-sm">Equipment</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🚜</span> <p class="mt-2 font-semibold text-xs md:text-sm">Agricultural M.</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🛑</span> <p class="mt-2 font-semibold text-xs md:text-sm">Brake Discs</p></div>
+                    <div class="p-3 md:p-4 bg-white rounded shadow"> <span class="text-2xl md:text-3xl">🔗</span> <p class="mt-2 font-semibold text-xs md:text-sm">Brackets</p></div>
+                </div>
+            </section>
+        </main>
+    </div> <div class="pdf-page-break"></div>
 
-        <section class="my-8 md:my-12">
-            <h2 class="section-title">The L'BESTE GAT Advantage</h2>
-            <div class="card max-w-3xl mx-auto text-center">
-                <img src="https://placehold.co/200x60/0052CC/FFFFFF?text=L'BESTE+GAT+R%26D" alt="L'BESTE GAT R&D Placeholder" class="mx-auto mb-6 h-12 md:h-16" onerror="this.src='https://placehold.co/200x60/cccccc/333333?text=R&D+Image+Error'; this.alt='Error Loading R&D Image';">
-                <p class="text-base md:text-lg mb-4">With decades of expertise in chemical solutions and a dedicated R&D center, L'BESTE GAT is at the forefront of coating technology. We provide not just products, but comprehensive solutions and technical support to ensure our clients achieve optimal results.</p>
-                <p class="font-semibold brand-secondary text-base md:text-lg">Your partner in sustainable metal protection innovation.</p>
-            </div>
-        </section>
-    </main>
+    <div class="pdf-page-container"> <main class="container mx-auto p-4 md:p-8">
+            <section class="my-8 md:my-12">
+                <h2 class="section-title">The L'BESTE GAT Advantage</h2>
+                <div class="card max-w-3xl mx-auto text-center">
+                    <img src="https://placehold.co/200x60/0052CC/FFFFFF?text=L'BESTE+GAT+R%26D" alt="L'BESTE GAT R&D Placeholder" class="mx-auto mb-6 h-12 md:h-16" onerror="this.src='https://placehold.co/200x60/cccccc/333333?text=R&D+Image+Error'; this.alt='Error Loading R&D Image';">
+                    <p class="text-base md:text-lg mb-4">With decades of expertise in chemical solutions and a dedicated R&D center, L'BESTE GAT is at the forefront of coating technology. We provide not just products, but comprehensive solutions and technical support to ensure our clients achieve optimal results.</p>
+                    <p class="font-semibold brand-secondary text-base md:text-lg">Your partner in sustainable metal protection innovation.</p>
+                </div>
+            </section>
+        </main>
 
-    <footer class="bg-brand-primary text-white py-12 px-4 md:py-16 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Choose the Future. Choose GEOCOTE™.</h2>
-        <p class="text-base md:text-lg mb-8">Ready to elevate your products with superior, eco-friendly protection? <br>Contact L'BESTE GAT today for samples, technical consultations, and customized solutions.</p>
-        <a href="#" class="bg-brand-accent hover:bg-green-600 text-white font-bold py-3 px-6 md:px-8 rounded-lg text-base md:text-lg shadow-md transition duration-300">Learn More & Contact Us</a>
-         <p class="mt-8 text-xs md:text-sm opacity-80">L'BESTE GAT LTD. | Advanced Metal Coating Chemicals</p>
-    </footer>
-
-    <script>
+        <footer class="bg-brand-primary text-white py-12 px-4 md:py-16 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Choose the Future. Choose GEOCOTE™.</h2>
+            <p class="text-base md:text-lg mb-8">Ready to elevate your products with superior, eco-friendly protection? <br>Contact L'BESTE GAT today for samples, technical consultations, and customized solutions.</p>
+            <a href="#" class="bg-brand-accent hover:bg-green-600 text-white font-bold py-3 px-6 md:px-8 rounded-lg text-base md:text-lg shadow-md transition duration-300">Learn More & Contact Us</a>
+             <p class="mt-8 text-xs md:text-sm opacity-80">L'BESTE GAT LTD. | Advanced Metal Coating Chemicals</p>
+        </footer>
+    </div> <script>
         const CHART_PRIMARY_COLOR = '#007BFF'; // Secondary Blue
         const CHART_ACCENT_COLOR = '#28A745'; // Accent Green
         const CHART_NEUTRAL_COLOR = '#6c757d'; // Medium Gray
@@ -500,12 +527,12 @@
             data: {
                 labels: [
                     wrapLabels('Solvent-Based (Magni)', 16), 
-                    wrapLabels('GEOCOTE™ Water-Based', 16),
+                    wrapLabels('GEOCOTE™ Water-Based', 16), // This label corresponds to the data point we are changing
                     wrapLabels('Competitor Water-Based (NOF)', 16)
                 ],
                 datasets: [{
                     label: 'VOC Content (%)',
-                    data: [50, 20, 20], 
+                    data: [50, 10, 20], // Changed the second value from 20 to 10
                     backgroundColor: [CHART_NEUTRAL_COLOR, CHART_ACCENT_COLOR, CHART_PRIMARY_COLOR],
                     borderColor: [CHART_NEUTRAL_COLOR, CHART_ACCENT_COLOR, CHART_PRIMARY_COLOR],
                     borderWidth: 1
